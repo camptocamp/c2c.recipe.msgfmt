@@ -13,7 +13,7 @@ setup(
     url = 'http://github.com/fredj/c2c.recipe.msgfmt',
 
     description = 'A buildout recipe to compile message catalog to binary format.',
-    long_description = open('README.rst').read(),
+    long_description = open('README').read(),
 
     classifiers = [
         'Framework :: Buildout',
