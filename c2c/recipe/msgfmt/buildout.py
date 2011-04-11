@@ -4,7 +4,6 @@ import os
 import logging
 from babel.messages.mofile import write_mo
 from babel.messages.pofile import read_po
-import zc.buildout
 
 class CompileMo(object):
     def __init__(self, buildout, name, options):
@@ -19,7 +18,7 @@ class CompileMo(object):
                 domain, ext = os.path.splitext(filename)
                 if ext == '.po':
                     po = open(os.path.join(dirpath, filename))
-                    mo = file(os.path.join(dirpath, domain + '.mo'), 'wb')
+                    mo = open(os.path.join(dirpath, domain + '.mo'), 'wb')
                     logging.getLogger(self.name).info(
                         "compiling catalog '%s' to '%s'"%(po.name, mo.name))
                     write_mo(mo, read_po(po))
