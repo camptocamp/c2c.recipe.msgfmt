@@ -10,7 +10,7 @@ setup(
 
     author  = 'Frederic Junod',
     author_email = 'frederic.junod@camptocamp.com',
-    url = 'http://github.com/fredj/c2c.recipe.msgfmt',
+    url = 'https://github.com/fredj/c2c.recipe.msgfmt',
 
     description = 'A buildout recipe to compile message catalog to binary format.',
     long_description = open('README').read(),
