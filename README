@@ -2,16 +2,16 @@
 c2c.recipe.msgfmt
 =================
 
-A buildout recipe to compile message catalog to binary format.
+A buildout recipe to compile message catalog to binary format (.po to .mo).
 
 Requirements
 ------------
- * Babel (http://babel.edgewall.org/)
- * zc.buildout
+
+ * `Babel <http://babel.edgewall.org/>`_
 
 Usage
 -----
-Minimal buildout config example:
+Minimal buildout config example::
 
     [buildout]
     parts = po2mo
