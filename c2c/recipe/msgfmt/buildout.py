@@ -10,10 +10,12 @@ class CompileMo(object):
         self.name = name
         basedir = buildout['buildout']['directory']
         self.podir = os.path.join(basedir, options.get('po-directory'))
+        self.followlinks = options.get('followlinks', False)
 
     def install(self):
         generated = []
-        for dirpath, _, filenames in os.walk(self.podir):
+        for dirpath, _, filenames in os.walk(self.podir,
+                                             followlinks=self.followlinks):
             for filename in filenames:
                 domain, ext = os.path.splitext(filename)
                 if ext == '.po':

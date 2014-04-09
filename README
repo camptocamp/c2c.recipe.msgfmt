@@ -19,5 +19,6 @@ Minimal buildout config example::
     [po2mo]
     recipe = c2c.recipe.msgfmt
     po-directory = foo/bar/i18n/
+    followlinks = false
 
 The .mo files are created in the same directory as the .po files.
