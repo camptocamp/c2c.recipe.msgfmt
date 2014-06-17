@@ -16,6 +16,7 @@ class CompileMo(object):
         generated = []
         for dirpath, _, filenames in os.walk(self.podir,
                                              followlinks=self.followlinks):
+            locale = os.path.basename(os.path.dirname(dirpath))
             for filename in filenames:
                 domain, ext = os.path.splitext(filename)
                 if ext == '.po':
@@ -23,7 +24,7 @@ class CompileMo(object):
                     mo = open(os.path.join(dirpath, domain + '.mo'), 'wb')
                     logging.getLogger(self.name).info(
                         "compiling catalog '%s' to '%s'"%(po.name, mo.name))
-                    write_mo(mo, read_po(po))
+                    write_mo(mo, read_po(po, locale))
                     generated.append(mo.name)
                     mo.close()
 
